@@ -1,0 +1,33 @@
+{
+  "name": "gg-transfer",
+  "version": "0.1.0",
+  "description": "GG Transfer - peer-to-peer file transfer for Windows",
+  "main": "src/main.js",
+  "author": "ggarridog01-tech",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^34.3.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.ggarridog01.ggtransfer",
+    "productName": "GG Transfer",
+    "directories": { "output": "dist" },
+    "files": ["src/**/*", "package.json"],
+    "win": {
+      "target": ["nsis"],
+      "artifactName": "GG-Transfer-${version}-Setup.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}

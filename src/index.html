@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https: wss:; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data: blob:">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GG Transfer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+  <header>
+    <div class="brand"><div class="logo">GG</div><div><h1>GG Transfer</h1><p>TRANSFERENCIA DIRECTA Y SEGURA</p></div></div>
+    <span class="pill"><i></i> P2P · INTERNET</span>
+  </header>
+  <main>
+    <section class="intro">
+      <h2>Envía archivos. Sin nubes. Sin complicaciones.</h2>
+      <p>Conecta dos computadoras mediante un código privado y transfiere los archivos directamente cuando la red lo permita.</p>
+    </section>
+    <section class="cards">
+      <article class="card">
+        <div class="card-icon">↑</div><h3>Enviar archivos</h3>
+        <p>Genera un código y compártelo con la persona que recibirá tus archivos.</p>
+        <label class="field-label" for="signalUrl">Servidor de conexión</label>
+        <input id="signalUrl" value="wss://TU-SERVIDOR-DE-SENALIZACION" spellcheck="false">
+        <label class="field-label" for="fileInput">Archivos para enviar</label>
+        <input id="fileInput" type="file" multiple>
+        <button id="createBtn" class="primary">Crear código de envío</button>
+        <div id="senderCode" class="code hidden"></div>
+      </article>
+      <article class="card">
+        <div class="card-icon">↓</div><h3>Recibir archivos</h3>
+        <p>Introduce el código que te compartió el emisor para conectarte.</p>
+        <label class="field-label" for="joinCode">Código de conexión</label>
+        <input id="joinCode" placeholder="Ej. 7F3A-91BC" maxlength="9" autocomplete="off">
+        <div class="spacer"></div>
+        <button id="joinBtn" class="secondary">Conectar y recibir</button>
+        <div id="receiveNote" class="muted small">Los archivos recibidos se preparan para guardarse en esta computadora.</div>
+      </article>
+    </section>
+    <section class="transfer card">
+      <div class="transfer-head"><div><h3>Estado de transferencia</h3><p id="status">Esperando una conexión</p></div><span id="stateTag" class="tag">DESCONECTADO</span></div>
+      <div class="progress"><div id="progressBar"></div></div>
+      <div class="transfer-foot"><span id="progressText">0%</span><span id="speedText">—</span></div>
+      <div id="fileList" class="file-list"></div>
+      <button id="cancelBtn" class="cancel" disabled>Cancelar conexión</button>
+    </section>
+    <p class="notice"><strong>Importante:</strong> esta versión inicial requiere desplegar el servidor de señalización incluido en el proyecto. STUN ayuda a establecer conexiones directas; algunas redes estrictas requieren un servidor TURN. Los datos de archivo no pasan por el servidor de señalización.</p>
+  </main>
+  <footer>GG Transfer · Hecho para ggarridog01-tech · Versión 0.1.0</footer>
+</div>
+<script src="renderer.js"></script>
+</body>
+</html>

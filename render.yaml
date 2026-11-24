@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: gg-transfer-signaling
+    runtime: node
+    rootDir: signaling
+    buildCommand: npm install
+    startCommand: npm start
+    plan: starter
+    healthCheckPath: /
