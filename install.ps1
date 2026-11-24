@@ -1,7 +1,7 @@
 # Instala Transferir en Windows desde la última release, para el usuario actual
 # y sin derechos de administrador. En PowerShell:
 #
-#   irm https://raw.githubusercontent.com/TU-USUARIO/transferir/main/install.ps1 | iex
+#   irm https://raw.githubusercontent.com/ggarridog-tech/transferir/main/install.ps1 | iex
 #
 # Descarga transferir.exe desde GitHub, lo comprueba con el SHA-256 que GitHub
 # publica para él y lo añade al PATH del usuario. No necesita Python.
