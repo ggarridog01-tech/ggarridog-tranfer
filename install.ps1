@@ -15,7 +15,7 @@
 & {
     $ErrorActionPreference = 'Stop'
     $ProgressPreference = 'SilentlyContinue'   # Invoke-WebRequest es mucho más rápido sin barra
-    $repo = 'TU-USUARIO/transferir'            # <-- cambia esto por tu usuario/repositorio
+    $repo = 'ggarridog-tech/transferir'            # <-- cambia esto por tu usuario/repositorio
 
     function Stop-Install($message) {
         Write-Host $message -ForegroundColor Red
