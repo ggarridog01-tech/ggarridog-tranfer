@@ -6,9 +6,9 @@
   "author": "ggarridog01-tech",
   "license": "MIT",
   "scripts": {
-    "start": "electron .",
-    "dist:win": "electron-builder --win nsis"
-  },
+  "start": "electron .",
+  "dist:win": "electron-builder --win nsis --publish never"
+},
   "devDependencies": {
     "electron": "^34.3.0",
     "electron-builder": "^25.1.8"
